@@ -1,0 +1,14 @@
+### Go ###
+# -- extensions for terraform
+*.tfvars
+provider.tf
+*.tfstate*
+*.lock*
+
+# -- Common IDE folders
+.idea
+.vscode
+.DS_Store
+
+# -- binaries
+*.out

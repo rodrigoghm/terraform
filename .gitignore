@@ -12,3 +12,6 @@ provider.tf
 
 # -- binaries
 *.out
+
+# -- folders
+.terraform/

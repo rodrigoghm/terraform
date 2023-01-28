@@ -4,4 +4,4 @@
 
 ## Disclaimer
 
-Por razones de seguridad algunas variables se les ha modificado su valor. Si desea obtener los valores reales debe escribir a Rodrigo Higuera a través de su correo [rodrigoghm@gmail.com]
+Por razones de seguridad algunas variables se les ha modificado su valor. Si desea obtener los valores reales debe escribir a [Rodrigo Higuera](rodrigoghm@gmail.com) a través de su correo 

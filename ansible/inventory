@@ -1,0 +1,3 @@
+[server-jenkins]
+svr-jenkins ansible_host=20.230.4.94
+svr-jenkins ansible_user=root

@@ -1,0 +1,48 @@
+#servidores web
+- hosts: server-jenkins
+  remote_user: root
+  vars:
+    java: 
+      pkg: openjdk-11-jdk
+      ppa: ppa:openjdk-r/ppa
+    jenkins:
+      repository: https://pkg.jenkins.io/debian/jenkins-ci.org.key
+      package: https://pkg.jenkins.io/debian-stable
+  tasks:
+    - name: "Add the repository key to the system."
+      shell: "wget -q -O - {{jenkins['repository']}} | sudo apt-key add -"
+    - name: "Append the Debian package repository address to the server’s"
+      shell: "echo deb {{jenkins['package']}} binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list"
+    - name: Install repositorio PPA
+      shell: "add-apt-repository {{java['ppa']}} -y"
+    - name: Update server
+      shell: "apt-get -y update"
+    - name: "Install Java-11"
+      shell: "apt install {{java['pkg']}} -y"
+    - name: "pause 30 seconds"
+      pause:
+        seconds: 30
+    - name: Install Jenkins
+      shell: "apt-get install -y jenkins"
+    - name: Starting Jenkins
+      shell: "systemctl start jenkins"
+    - name: Check status Jenkins
+      shell: "systemctl status jenkins"
+      register: output
+    - name: "Check status Jenkins"
+      debug:
+        msg: "[{{ output.stdout_lines }}]"
+    - name: "Habilitar puerto 8080"
+      shell: "ufw allow 8080"
+    - name: "Habilitar ufw"
+      shell: "echo 'y' | ufw enable"
+    - name: "Status ufw"
+      shell: "ufw status"
+      register: outputufw
+    - name: "Check status ufw"
+      debug:
+        msg: "[{{ outputufw.stdout_lines }}]"
+        
+    
+
+    

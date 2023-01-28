@@ -1,7 +1,5 @@
 ### Go ###
 # -- extensions for terraform
-*.tfvars
-provider.tf
 *.tfstate*
 *.lock*
 

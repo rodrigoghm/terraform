@@ -62,5 +62,3 @@ variable "vm_computer_name" {}
 variable "vm_admin_username" {}
 variable "vm_admin_password" {}
 variable "vm_disable_password_authentication" {}
-
-
